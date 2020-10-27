@@ -154,6 +154,7 @@
 
 <script>
 import CheckoutForm from './CheckoutForm.vue'
+import axios from 'axios'
 export default {
     name: 'Form',
     components: {
@@ -189,7 +190,22 @@ export default {
           }
           this.invalidInput = false;
 
-          this.$emit('submit-payment', {
+          // this.$emit('submit-payment', {
+          //   firstName: this.firstName,
+          //   lastName: this.lastName,
+          //   username: this.username,
+          //   email: this.email,
+          //   address: this.address,
+          //   address2: this.address2,
+          //   country: this.country,
+          //   zipCode: this.zipCode,
+          //   saveInfo: this.saveInfo,
+          //   paymentMethod: this.paymentMethod,
+          //   cardName: this.cardName,
+          //
+          // })
+
+          axios.post('https://vequiem-24e43.firebaseio.com/payment.json', {
             firstName: this.firstName,
             lastName: this.lastName,
             username: this.username,
@@ -200,8 +216,7 @@ export default {
             zipCode: this.zipCode,
             saveInfo: this.saveInfo,
             paymentMethod: this.paymentMethod,
-            cardName: this.cardName,
-
+            cardName: this.cardName
           })
               this.firstName = '',
               this.lastName = '',
