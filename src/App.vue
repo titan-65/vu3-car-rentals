@@ -40,7 +40,8 @@ export default {
   },
   data() {
     return {
-      storePayments: []
+      storePayments: [],
+      error: null,
     }
   },
   methods: {
@@ -89,6 +90,7 @@ export default {
       } catch (e) {
         // FIXME: Add errorHandler to check if no data is present
         console.log(e)
+        this.error = 'Failed to fetch data from server'
       }
     }
   },

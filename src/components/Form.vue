@@ -11,9 +11,7 @@
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
               <input type="text" class="form-control" id="firstName" placeholder="" required="" v-model.trim="firstName">
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+
             </div>
 
             <div class="col-sm-6">
